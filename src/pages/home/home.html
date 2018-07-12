@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title style="text-align: center;">
+      Gerenciador Bolao
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+
+    <ion-item>
+      <ion-label floating="">Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="bolao.nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating="">França</ion-label>
+      <ion-input type="number" (ngModelChange)="bolao.time1 = converterNumber($event)" [(ngModel)]="bolao.time1"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating="">Croacia</ion-label>
+      <ion-input type="number" (ngModelChange)="bolao.time2 = converterNumber($event)" [(ngModel)]="bolao.time2"></ion-input>
+    </ion-item>
+  </ion-list>
+
+
+    <button ion-button full round (click)="cadastrarBolaoSqlite()">
+         Cadastrar Palpite Bolao</button>
+
+    <button ion-button full round (click)="chamaListaBolao()">
+         Buscar Palpite Bolao</button>
+
+
+</ion-content>
